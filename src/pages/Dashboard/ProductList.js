@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import deleteProduct from "../../redux/thunk/products/deleteProduct";
 import loadProductData from "../../redux/thunk/products/fetchProducts";
+import { FaEdit } from "react-icons/fa"
 
 const ProductList = () => {
   const products = useSelector((state) => state.product.products)
@@ -37,6 +38,9 @@ const ProductList = () => {
                 </th>
                 <th className='p-2'>
                   <div className='font-semibold text-center'>Action</div>
+                </th>
+                <th className='p-2'>
+                  <div className='font-semibold text-center'>Edit</div>
                 </th>
               </tr>
             </thead>
@@ -84,6 +88,13 @@ const ProductList = () => {
                             d='M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16'
                           ></path>
                         </svg>
+                      </button>
+                    </div>
+                  </td>
+                  <td className='p-2'>
+                    <div className='flex justify-center'>
+                      <button onClick={() => dispatch()}>
+                        <FaEdit size={20} ></FaEdit>
                       </button>
                     </div>
                   </td>
