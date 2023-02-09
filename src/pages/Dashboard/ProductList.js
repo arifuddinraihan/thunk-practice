@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import deleteProduct from "../../redux/thunk/products/deleteProduct";
 import loadProductData from "../../redux/thunk/products/fetchProducts";
 import { FaEdit } from "react-icons/fa"
+import updatedProduct from "../../redux/thunk/products/editProduct";
 
 const ProductList = () => {
   const products = useSelector((state) => state.product.products)
@@ -93,7 +94,7 @@ const ProductList = () => {
                   </td>
                   <td className='p-2'>
                     <div className='flex justify-center'>
-                      <button onClick={() => dispatch()}>
+                      <button onClick={() => dispatch(updatedProduct())}>
                         <FaEdit size={20} ></FaEdit>
                       </button>
                     </div>
